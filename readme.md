@@ -1,6 +1,8 @@
 # Spam Classification
 <img src="screenshot.gif" alt="Recording">
+
 #### Import all the necessary library 
+
 ```python
 import numpy as np
 import pandas as pd
