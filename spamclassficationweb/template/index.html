@@ -1,0 +1,35 @@
+{% include "header.html" %}
+
+<div class="container">
+    <center>
+        <form  action="" method="POST">
+                {% csrf_token %} 
+                <label style="font-size: large;" for="exampleFormControlTextarea1" class="float-left">Enter your Message</label>
+                <textarea name="msg" id="msg" cols="100" rows="10" class="form-control"></textarea>
+                <br>
+                <input type="submit" class="btn btn-primary float-left" value="Submit">
+          </form>
+    </center>
+</div>
+<br><br>
+<div class="container">
+    {% if text == 'ham' %}
+    <div class="alert alert-success" role="alert">
+        The Message doesn't look like Spam
+      </div>
+      {% elif text == 'spam'%}
+      <div class="alert alert-danger" role="alert">
+        This is Spam
+      </div>
+      {% else%}
+      <div class="alert alert-success" role="alert">
+        Type the Text
+      </div>
+    {% endif %}
+    <p>{{msg}}</p>
+
+</div>
+
+
+{% include "footer.html" %}
+
